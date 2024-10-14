@@ -6,7 +6,7 @@ variable arch {
     type = list(string)
 }
 
-variable os_disribution {
+variable os_distribution {
     type = list(string)
 }
 

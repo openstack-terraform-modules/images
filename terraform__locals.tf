@@ -1,7 +1,7 @@
 locals {
     url = var.url
     arch = var.arch 
-    os_distribution = var.os_disribution
+    os_distribution = var.os_distribution
     os_version = var.os_version
 
     images = {

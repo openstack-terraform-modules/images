@@ -18,6 +18,6 @@ locals {
         }
     }
 */
-    deloyment = var.deployment
+    deployment = var.deployment
     images = var.images
 }

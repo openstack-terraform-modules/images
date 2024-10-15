@@ -1,3 +1,4 @@
+/*
 resource openstack_images_image_v2 image {
     for_each = local.images.data.urls
 
@@ -14,3 +15,4 @@ resource openstack_images_image_v2 image {
         "OS_VERSION": local.images.version
     }
 }
+*/

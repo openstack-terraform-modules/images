@@ -1,4 +1,5 @@
 locals {
+/*
     url = var.url
     arch = var.arch 
     os_distribution = var.os_distribution
@@ -16,4 +17,7 @@ locals {
             os_version = element(local.os_version, image_index)
         }
     }
+*/
+    deloyment = var.deployment
+    images = var.images
 }

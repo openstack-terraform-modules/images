@@ -6,9 +6,10 @@
 
 ```bash 
 set -a
-TF_VAR_CLUSTER_IMAGE="$(
+TF_VAR_CLUSTER_IMAGES="$(
     printf '%s' '{
         "name": "noble",
+        "description":  "Ubuntu 24.04 - Noble Server",
         "images": {
             "distribution": "ubuntu",
             "version": "24.04",
@@ -19,7 +20,7 @@ TF_VAR_CLUSTER_IMAGE="$(
                 "riscv64": "https://cloud-images.ubuntu.com/noble/current/noble-server-cloudimg-riscv64.img"
             }
         }
-    }' | pkgx jq
+    }' | pkgx jq^1.7 --compact-output
 )"
 set +a
 ```
@@ -34,8 +35,8 @@ module deployment {
 module images_noble {
     source = "git::https://github.com/openstack-terraform-modules/images.git"
 
-    deployment = module.deployment.config
-    images = var.images
+    deployment = module.deployment.outputs
+    images = jsondecode(var.CLUSTER_IMAGES)
 }
 ```
 

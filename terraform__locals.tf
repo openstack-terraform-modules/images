@@ -24,6 +24,6 @@ locals {
     }
     image_name = var.images.name
     image_distribution = var.images.data.distribution
-    image_version = var.images.data.distribution
+    image_version = var.images.data.version
     image_format = var.images.data.format
 }

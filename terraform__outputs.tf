@@ -1,4 +1,4 @@
-output images {
+output outputs {
     value = local.images
     
 }

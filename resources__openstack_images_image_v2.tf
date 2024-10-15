@@ -6,12 +6,15 @@ resource openstack_images_image_v2 image {
     container_format = "bare"
     disk_format = local.image_format
 
+    #
+    # https://registry.terraform.io/providers/terraform-provider-openstack/openstack/latest/docs/resources/images_image_v2#properties
+    #
+    # do not set **os_** properties managed by openstack
     properties = {
-    //    "DEPLOYMENT_UUID": local.deployment.uuid,
-    //    "DEPLOYMENT_ID": local.deployment.id,
-    //    "architecture": each.key,
-    //    "os_distro": local.image_distribution,
-    //    "os_version": local.image_version,
-    //    "img_config_drive": local.config_drive
+        "DEPLOYMENT_UUID": local.deployment.uuid,
+        "DEPLOYMENT_ID": local.deployment.id,
+        "ARCHITECTURE": each.key,
+        "DISTRIBUTION": local.image_distribution,
+        "VERSION": local.image_version
     }
 }

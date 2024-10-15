@@ -19,5 +19,11 @@ locals {
     }
 */
     deployment = var.deployment
-    images = var.images
+    images = {
+        for arch, url in var.images.data.urls : arch => url if url != null
+    }
+    image_name = var.images.name
+    image_distribution = var.images.data.distribution
+    image_version = var.images.data.distribution
+    image_format = var.images.data.format
 }

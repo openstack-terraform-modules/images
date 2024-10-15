@@ -25,6 +25,6 @@ locals {
     image_name = var.images.name
     image_distribution = var.images.data.distribution
     image_version = var.images.data.version
+    image_flavor = var.images.data.flavor
     image_format = var.images.data.format
-    config_drive = var.images.data.config_drive == "mandatory" ? "mandatory" : "optional"
 }

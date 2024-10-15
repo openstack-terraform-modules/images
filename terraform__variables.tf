@@ -12,6 +12,7 @@ variable images {
         data = object({
           distribution = string
           version = string
+          flavor = string
           format = string
           config_drive = optional(string)
           urls = object({

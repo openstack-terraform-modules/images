@@ -18,8 +18,8 @@ TF_VAR_IMAGES="$(
             "type": "linux",
             "distribution": "ubuntu",
             "version": "24.04",
+            "flavor": "server",
             "format": "qcow2",
-            "config_drive": "optional",
             "urls": {
                 "amd64": "https://cloud-images.ubuntu.com/noble/current/noble-server-cloudimg-amd64.img",
                 "arm64": "https://cloud-images.ubuntu.com/noble/current/noble-server-cloudimg-arm64.img",
@@ -47,3 +47,5 @@ module images {
 ```
 
 ## Output
+
+

@@ -15,6 +15,7 @@ resource openstack_images_image_v2 image {
         format("DEPLOYMENT_ID=%s", local.deployment.id),
         format("ARCHITECTURE=%s", each.key),
         format("DISTRIBUTION=%s", local.image_distribution),
-        format("VERSION=%s", local.image_version)
+        format("VERSION=%s", local.image_version),
+        format("FLAVOR=%s", local.image_flavor)
     ]
 }

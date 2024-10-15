@@ -13,6 +13,7 @@ variable images {
           distribution = string
           version = string
           format = string
+          config_drive = optional(string)
           urls = object({
             amd64 = string
             arm64 = optional(string)

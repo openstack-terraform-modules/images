@@ -11,6 +11,7 @@ resource openstack_images_image_v2 image {
         "DEPLOYMENT_ID": local.deployment.id,
         "architecture": each.key,
         "os_distro": local.image_distribution,
-        "os_version": local.image_version
+        "os_version": local.image_version,
+        "img_config_drive": local.config_drive
     }
 }

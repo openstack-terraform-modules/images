@@ -10,7 +10,7 @@ resource openstack_images_image_v2 image {
         "DEPLOYMENT_UUID": local.deployment.uuid,
         "DEPLOYMENT_ID": local.deployment.id,
         "ARCH": each.key,
-        "OS_DISTRIBUTION": local.images.distribution,
-        "OS_VERSION": local.images.version
+        "OS_DISTRIBUTION": local.images.data.distribution,
+        "OS_VERSION": local.images.data.version
     }
 }

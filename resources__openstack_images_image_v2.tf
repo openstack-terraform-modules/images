@@ -10,11 +10,11 @@ resource openstack_images_image_v2 image {
     # https://registry.terraform.io/providers/terraform-provider-openstack/openstack/latest/docs/resources/images_image_v2#properties
     #
     # do not set **os_** properties managed by openstack
-    properties = {
-        "DEPLOYMENT_UUID": local.deployment.uuid,
-        "DEPLOYMENT_ID": local.deployment.id,
-        "ARCHITECTURE": each.key,
-        "DISTRIBUTION": local.image_distribution,
-        "VERSION": local.image_version
-    }
+    tags = [
+        format("DEPLOYMENT_UUID=%s", local.deployment.uuid),
+        format("DEPLOYMENT_ID=%s", local.deployment.id),
+        format("ARCHITECTURE=%s", each.key),
+        format("DISTRIBUTION=%s", local.image_distribution),
+        format("VERSION=%s", local.image_version)
+    ]
 }

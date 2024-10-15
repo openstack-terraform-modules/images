@@ -1,7 +1,7 @@
 resource openstack_images_image_v2 image {
     for_each = local.images.data.urls
 
-    name = each.value.name
+    name = local.images.name
     image_source_url = each.value
     container_format = "bare"
     disk_format = local.images.data.format

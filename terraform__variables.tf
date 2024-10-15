@@ -14,10 +14,10 @@ variable images {
           version = string
           urls = object({
             amd64 = string
-            arm64 = string
-            riscv64 = string
-            ppc64el = string
-            s390x = string
+            arm64 = optional(string)
+            riscv64 = optional(string)
+            ppc64el = optional(string)
+            s390x = optional(string)
           })
         })
     })

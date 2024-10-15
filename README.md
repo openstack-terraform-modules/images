@@ -10,7 +10,7 @@ https://docs.openstack.org/glance/latest/admin/useful-image-properties.html
 
 ```bash 
 set -a
-TF_VAR_CLUSTER_IMAGES="$(
+TF_VAR_IMAGES="$(
     printf '%s' '{
         "name": "noble",
         "description":  "Ubuntu 24.04 - Noble Server",
@@ -38,11 +38,11 @@ module deployment {
     source = "git::https://github.com/openstack-terraform-modules/deployment.git"
 }
 
-module images_noble {
+module images {
     source = "git::https://github.com/openstack-terraform-modules/images.git"
 
     deployment = module.deployment.outputs
-    images = jsondecode(var.CLUSTER_IMAGES)
+    images = jsondecode(var.IMAGES)
 }
 ```
 

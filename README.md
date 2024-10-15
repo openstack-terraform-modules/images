@@ -1,5 +1,9 @@
 # images
 
+## Documentations
+
+https://docs.openstack.org/glance/latest/admin/useful-image-properties.html
+
 ## Configuration
 
 > project.env

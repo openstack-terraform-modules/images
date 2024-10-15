@@ -1,10 +1,10 @@
 resource openstack_images_image_v2 image {
-    for_each = local.images.urls
+    for_each = local.images.data.urls
 
     name = each.value.name
     image_source_url = each.value
     container_format = "bare"
-    disk_format = local.images.format
+    disk_format = local.images.data.format
 
     properties = {
         "DEPLOYMENT_UUID": local.deployment.uuid,

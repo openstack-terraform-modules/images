@@ -9,7 +9,7 @@ variable images {
     description = "A multi-arch image to upload"
     type = object({
         name = string
-        images = object({
+        data = object({
           distribution = string
           version = string
           urls = object({
